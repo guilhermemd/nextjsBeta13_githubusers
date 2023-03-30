@@ -5,6 +5,7 @@ export async function Users() {
   const { data } = await useUsers();
   return (
     <section>
+      <p className="text-3xl font-bold underline  text-red-600">Users Page</p>
       <div>
         <table>
           <thead>
