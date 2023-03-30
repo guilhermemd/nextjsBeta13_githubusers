@@ -3,13 +3,13 @@ export async function UserRepos(props: { userName: string }) {
   const { userName } = props;
   const { data } = await useUserRepos({ userName });
 
-  console.log("user repos", data);
+  // console.log("user repos", data);
   return (
     <div className="userRepos">
       Repos
-      {/* {data.length === 0 ? (
+      {data.length === 0 ? (
         <div>
-          <p>{`${userProfile} has no repositories on Github`}</p>
+          <p>{`${userName} has no repositories on Github`}</p>
         </div>
       ) : (
         <div className="userRepos__wrapper">
@@ -40,7 +40,7 @@ export async function UserRepos(props: { userName: string }) {
             </tbody>
           </table>
         </div>
-      )} */}
+      )}
     </div>
   );
 }

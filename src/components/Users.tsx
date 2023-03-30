@@ -1,4 +1,5 @@
 import { useUsers } from "@/talons/Users/useUsers";
+import Link from "next/link";
 
 export async function Users() {
   const { data } = await useUsers();
@@ -19,14 +20,7 @@ export async function Users() {
                 <td>{item.id}</td>
                 <td>{item.login}</td>
                 <td>
-                  {/* <Link
-                    to={{
-                      pathname: `/userDetails/${item.login}`,
-                    }}
-                    className="infos__link"
-                  > */}
-                  User Details
-                  {/* </Link> */}
+                  <Link href={`/userDetails/${item.login}`}>User Details</Link>
                 </td>
               </tr>
             ))}

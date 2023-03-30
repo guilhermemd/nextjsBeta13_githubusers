@@ -9,12 +9,11 @@ export default async function UserDetails({
   const userName = params.user;
 
   const { data } = await useUserDetails({ userName });
+  console.log("user details", data);
   return (
     <div>
       User Details
-      {/* @ts-ignore */}
-      <UserRepos userName={userName} />
-      {/* <div>
+      <div>
         <div>
           <div>
             <h3>User Details:</h3>
@@ -30,7 +29,7 @@ export default async function UserDetails({
             </div>
             <div>
               <div>Login Creation: </div>
-              <div>{createAt}</div>
+              <div>{data.created_at}</div>
             </div>
             <div>
               <span>Profile: </span>
@@ -42,9 +41,10 @@ export default async function UserDetails({
         </div>
         <div>
           <h3>Repositories:</h3>
+          {/* @ts-ignore*/}
+          <UserRepos userName={userName} />
         </div>
-        <UserRepos userProfile={loginUser[2]} />
-      </div> */}
+      </div>
     </div>
   );
 }
